@@ -475,10 +475,8 @@ do ($ = window.jQuery, window) ->
 
           @$wrapper.addClass "#{@options.baseClass}-animate"  if @options.animate
           if @_dragEnd
-            state = @_dragEnd > -(@_handleWidth / 2)
-
+            @state not @options.state
             @_dragEnd = false
-            @state if @options.inverse then not state else state
           else
             @state not @options.state
 

@@ -627,7 +627,6 @@
           })(this),
           "mouseup.bootstrapSwitch touchend.bootstrapSwitch": (function(_this) {
             return function(e) {
-              var state;
               if (!_this._dragStart) {
                 return;
               }
@@ -636,9 +635,8 @@
                 _this.$wrapper.addClass(_this.options.baseClass + "-animate");
               }
               if (_this._dragEnd) {
-                state = _this._dragEnd > -(_this._handleWidth / 2);
+                _this.state(!_this.options.state);
                 _this._dragEnd = false;
-                _this.state(_this.options.inverse ? !state : state);
               } else {
                 _this.state(!_this.options.state);
               }
